@@ -20,7 +20,6 @@ public class Main {
 
 
     }
-
     public static void menu(Book[] books) {
         int input;
         do {
@@ -43,41 +42,58 @@ public class Main {
                 default:
                     System.out.println("Invalid Input");
             }
-
-
         } while (input > 3);
-
     }
     public static void checkIn(Book[] books){
         boolean isCheck = false;
-        int idIn;
+        int idIn, i;
 
         do {
-            System.out.println("Enter Book ID or 0 to Home Screen");
+            System.out.println("\nEnter Book ID or 0 to Home Screen");
             System.out.print("Book ID: ");
             idIn = scan.nextInt();
-            for(int i = 0 ; i <books.length; i++){
-                if(idIn == books[i].id && books[i].isCheckOut == true){
-                    books[i].setCheckOut(false);
-                    books[i].setCheckedOutTo("");
-                    isCheck = true;
-                    System.out.println("\nSuccessfully Check In\n");
-                    books[i].checkIn();
-                    showCheckOut(books);
-                }else if(idIn == 0){
-                    menu(books);
+
+            if(idIn == 0){
+                menu(books);
+                break;
+            }
+            try {
+                for (i = 0; i < books.length; i++) {
+                    if (idIn == books[i].id && books[i].isCheckOut == true) {
+                        books[i].setCheckOut(false);
+                        books[i].setCheckedOutTo("");
+                        isCheck = true;
+                        System.out.println("\nSuccessfully Check In\n");
+                        books[i].checkIn();
+                        showCheckOut(books);
+                    }
                 }
+            }catch(NullPointerException e){
 
             }
 
-        }while(idIn!=0);
+
+//            for( i = 0 ; i <books.length; i++){
+//                if(idIn == books[i].id && books[i].isCheckOut == true){
+//                    books[i].setCheckOut(false);
+//                    books[i].setCheckedOutTo("");
+//                    isCheck = true;
+//                    System.out.println("\nSuccessfully Check In\n");
+//                    books[i].checkIn();
+//                    showCheckOut(books);
+//                }else if(idIn == 0){
+//                    menu(books);
+//                    break;
+//               }
+//            }
+        }while(!isCheck);
     }
     public static void showCheckIn(Book[] books){
                  String input;
                  do {
                             System.out.println("\n C - Book Check in");
                             System.out.println(" X - Home Screen");
-                            System.out.print("Enter your Choice: ");
+                            System.out.print("\nEnter your Choice: ");
                             input = scan.next().toLowerCase();
                             if (input.equals("c")) {
                                 checkIn(books);
@@ -87,9 +103,7 @@ public class Main {
                                 System.out.println("\nInvalid input");
                             }
                         } while (input != "c");
-
     }
-
     public static void showCheckOut(Book[] books) {
         String input;
         System.out.println("\n--Checked out Books--");
@@ -97,27 +111,12 @@ public class Main {
             for (Book book : books) {
                 if (book.isCheckOut == true) {
                     book.checkOut();
-//                        do {
-//                            System.out.println("\n C - Book Check in");
-//                            System.out.println(" X - Home Screen");
-//                            System.out.print("Enter your Choice: ");
-//                            input = scan.next().toLowerCase();
-//                            if (input.equals("c")) {
-//                                checkIn(books);
-//                            } else if (input.equals("x")) {
-//                                menu(books);
-//                            }else{
-//                                System.out.println("\nInvalid input");
-//                            }
-//                        } while (input != "c");
                     }
             }
         } catch (NullPointerException e) {
 
         }
         showCheckIn(books);
-       // checkIn(books);
-        //menu(books);
     }
     public static void showBooks(Book[] books) {
 
@@ -130,7 +129,6 @@ public class Main {
 
         }
     }
-
     public static void checkExit(Book[] books) {
         int input;
         do {
@@ -149,9 +147,7 @@ public class Main {
                     System.out.println("Invalid Input");
             }
         } while (input != 2);
-
     }
-
     public static void nameCheckout(Book[] books) {
         String name;
         int bookID;
@@ -171,7 +167,8 @@ public class Main {
                     System.out.println("\nSuccessfully Check Out !!! ");
                     books[i].checkOut();
                     check = true;
-                    menu(books);
+                   // menu(books);
+                    checkExit(books);
                 }
             }
         } catch (NullPointerException e) {

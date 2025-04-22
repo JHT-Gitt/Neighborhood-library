@@ -53,6 +53,7 @@ public class Book {
         isCheckOut = checkOut;
     }
     public void checkOut(){
+        System.out.println("---------------------------------");
         System.out.println("\nBook ID: " + this.id);
         System.out.println("Book Title: " + this.title);
         System.out.println("ISBN: " + this.isbn);
@@ -62,6 +63,7 @@ public class Book {
     public void checkIn(){
 
         if(isCheckOut == false) {
+            System.out.println("---------------------------------");
             System.out.println("Book ID: " + this.id);
             System.out.println("Book Title: " + this.title);
             System.out.println("ISBN: " + this.isbn);
@@ -72,6 +74,7 @@ public class Book {
     public void displayBooks(){
 
         if(isCheckOut == false) {
+            System.out.println("---------------------------------");
             System.out.println("Book ID: " + this.id);
             System.out.println("Book Title: " + this.title);
             System.out.println("ISBN: " + this.isbn);
