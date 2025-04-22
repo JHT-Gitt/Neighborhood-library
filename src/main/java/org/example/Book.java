@@ -54,7 +54,7 @@ public class Book {
     }
     public void checkOut(){
 
-        System.out.println("⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬆️⬆️⬆️");
+        System.out.println("⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️");
         System.out.println("---------------------------------");
         System.out.println("Book ID: " + this.id);
         System.out.println("Book Title: " + this.title);

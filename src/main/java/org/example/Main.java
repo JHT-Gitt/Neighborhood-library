@@ -64,7 +64,8 @@ public class Main {
                         books[i].setCheckOut(false);
                         books[i].setCheckedOutTo("");
                         isCheck = true;
-                        System.out.println("\nSuccessfully Check In!!");
+                        System.out.println("\n-------------------------");
+                        System.out.println("Successfully Check In!!");
                         System.out.println("⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️");
                         books[i].checkIn();
                         showCheckOut(books);
@@ -108,8 +109,10 @@ public class Main {
             System.out.println("\n⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️");
             System.out.println("No Books are check out yet");
             System.out.println("⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️");
+        }else {
+            showCheckIn(books);
         }
-        showCheckIn(books);
+        menu(books);
     }
     public static void showBooks(Book[] books) {
 
@@ -157,7 +160,8 @@ public class Main {
                     books[i].setCheckOut(true);
                     books[i].setCheckedOutTo(name);
                     books[i].getCheckedOutTo(name);
-                    System.out.println("\nSuccessfully Check Out !!! ");
+                    System.out.println("\n----------------------------------");
+                    System.out.println("Successfully Check Out !!! ");
                     books[i].checkOut();
                     check = true;
                    // menu(books);
