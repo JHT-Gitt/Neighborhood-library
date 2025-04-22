@@ -63,29 +63,14 @@ public class Main {
                         books[i].setCheckOut(false);
                         books[i].setCheckedOutTo("");
                         isCheck = true;
-                        System.out.println("\nSuccessfully Check In\n");
+                        System.out.println("\nSuccessfully Check In!!");
+                        System.out.println("⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️");
                         books[i].checkIn();
                         showCheckOut(books);
                     }
                 }
             }catch(NullPointerException e){
-
             }
-
-
-//            for( i = 0 ; i <books.length; i++){
-//                if(idIn == books[i].id && books[i].isCheckOut == true){
-//                    books[i].setCheckOut(false);
-//                    books[i].setCheckedOutTo("");
-//                    isCheck = true;
-//                    System.out.println("\nSuccessfully Check In\n");
-//                    books[i].checkIn();
-//                    showCheckOut(books);
-//                }else if(idIn == 0){
-//                    menu(books);
-//                    break;
-//               }
-//            }
         }while(!isCheck);
     }
     public static void showCheckIn(Book[] books){
@@ -106,7 +91,8 @@ public class Main {
     }
     public static void showCheckOut(Book[] books) {
         String input;
-        System.out.println("\n--Checked out Books--");
+        System.out.println("\n---Checked out Books---");
+        System.out.println("⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️");
         try {
             for (Book book : books) {
                 if (book.isCheckOut == true) {
