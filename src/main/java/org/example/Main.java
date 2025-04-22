@@ -1,5 +1,6 @@
 package org.example;
 import javax.xml.transform.Source;
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class Main {
@@ -90,17 +91,23 @@ public class Main {
                         } while (input != "c");
     }
     public static void showCheckOut(Book[] books) {
-        String input;
+        boolean isEmpty = false;
         System.out.println("\n---Checked out Books---");
-        System.out.println("⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️");
+       // System.out.println("\n⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️");
         try {
             for (Book book : books) {
                 if (book.isCheckOut == true) {
+                    isEmpty = true;
                     book.checkOut();
                     }
             }
         } catch (NullPointerException e) {
 
+        }
+        if(!isEmpty){
+            System.out.println("\n⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️");
+            System.out.println("No Books are check out yet");
+            System.out.println("⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️");
         }
         showCheckIn(books);
     }

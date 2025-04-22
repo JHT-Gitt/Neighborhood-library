@@ -53,12 +53,15 @@ public class Book {
         isCheckOut = checkOut;
     }
     public void checkOut(){
+
+        System.out.println("⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬆️⬆️⬆️");
         System.out.println("---------------------------------");
-        System.out.println("\nBook ID: " + this.id);
+        System.out.println("Book ID: " + this.id);
         System.out.println("Book Title: " + this.title);
         System.out.println("ISBN: " + this.isbn);
         System.out.println("Checked out to: " + this.checkedOutTo);
         System.out.println("---------------------------------");
+        System.out.println("⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️");
     }
     public void checkIn(){
 
@@ -68,6 +71,7 @@ public class Book {
             System.out.println("Book Title: " + this.title);
             System.out.println("ISBN: " + this.isbn);
             System.out.println("---------------------------------");
+            System.out.println("⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️");
         }
 
     }
